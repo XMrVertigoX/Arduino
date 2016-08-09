@@ -1,0 +1,32 @@
+#######################################
+# Syntax Coloring Map
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Serial7SegmentDisplay_I2C	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+write	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+CLEARDISPLAY	LITERAL1
+DECIMAL	LITERAL1
+CURSOR	LITERAL1
+BRIGHTNESS	LITERAL1
+DIGIT1	LITERAL1
+DIGIT2	LITERAL1
+DIGIT3	LITERAL1
+DIGIT4	LITERAL1
+BAUDRATE	LITERAL1
+I2CADDRESS	LITERAL1
+FACTORYRESET	LITERAL1

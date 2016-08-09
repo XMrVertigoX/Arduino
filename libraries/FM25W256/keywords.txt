@@ -1,0 +1,14 @@
+## Datatypes (KEYWORD1)
+
+FM25W256	KEYWORD1
+
+
+## Methods and Functions (KEYWORD2)
+
+read	KEYWORD2
+write	KEYWORD2
+
+
+## Constants (LITERAL1)
+
+slaveID	LITERAL1
