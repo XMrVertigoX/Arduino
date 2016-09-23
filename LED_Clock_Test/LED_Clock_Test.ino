@@ -1,11 +1,11 @@
-#include <SPI.h>
 #include <MAX7219.h>
+#include <SPI.h>
 
 MAX7219 segment(10);
 
 void setup() {
     SPI.begin();
-    
+
     segment.begin();
 
     segment.write(DECODEMODE, 0xFF);

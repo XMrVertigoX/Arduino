@@ -1,7 +1,7 @@
 #include "MAX7219_LEDMatrix.h"
 
-#include "Arduino.h"
 #include <SPI.h>
+#include "Arduino.h"
 
 MAX7219_LEDMatrix::MAX7219_LEDMatrix(uint8_t spiAddress) {
     _spiAddress = spiAddress;
@@ -10,8 +10,8 @@ MAX7219_LEDMatrix::MAX7219_LEDMatrix(uint8_t spiAddress) {
 void MAX7219_LEDMatrix::begin() {
     pinMode(_spiAddress, OUTPUT);
     digitalWrite(_spiAddress, HIGH);
-    
-    for(int i = 0; i < _stateSize; i++) {
+
+    for (int i = 0; i < _stateSize; i++) {
         writeByte(i, 0x00);
     }
 
@@ -22,22 +22,22 @@ void MAX7219_LEDMatrix::begin() {
 }
 
 void MAX7219_LEDMatrix::clearMatrix() {
-    for(int i = 0; i < 8; i++) {
-        writeByte(i+1, 0);
+    for (int i = 0; i < 8; i++) {
+        writeByte(i + 1, 0);
     }
 }
 
 void MAX7219_LEDMatrix::drawPixel(uint8_t x, uint8_t y, bool value) {
-    y++; // Digit 0 has address 0x01
-    
+    y++;  // Digit 0 has address 0x01
+
     if (x < 8 && y < 8) {
-        if(value) {
-            _state[y] = _state[y] | byte(pow(2, 7-x));
+        if (value) {
+            _state[y] = _state[y] | byte(pow(2, 7 - x));
         } else {
-            _state[y] = _state[y] & ~ byte(pow(2, 7-x));
+            _state[y] = _state[y] & ~byte(pow(2, 7 - x));
         }
     }
-      
+
     writeByte(y, _state[y]);
 }
 
@@ -56,8 +56,8 @@ void MAX7219_LEDMatrix::displayTest(bool b) {
 void MAX7219_LEDMatrix::setBrightness(uint8_t brightness) {
     if (brightness > 15) {
         brightness = 15;
-    } 
-    
+    }
+
     writeByte(INTENSITY, brightness);
 }
 

@@ -7,18 +7,16 @@
  * CLK: Pin 13
  */
 
-#include <SPI.h>
 #include <MAX7219_LEDMatrix.h>
+#include <SPI.h>
 
 MAX7219_LEDMatrix matrix(10);
 
 void setup() {
-  SPI.begin();
-  
-  matrix.begin();
-  matrix.clearMatrix();
+    SPI.begin();
+
+    matrix.begin();
+    matrix.clearMatrix();
 }
 
-void loop() {
-  
-}
+void loop() {}
